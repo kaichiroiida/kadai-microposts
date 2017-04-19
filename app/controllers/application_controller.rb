@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-end
+  
+  include SessionsHelper
 
  private
 
@@ -12,4 +13,9 @@ end
 
   def counts(user)
     @count_microposts = user.microposts.count
+    @count_followings = user.followings.count
+    @count_followers = user.followers.count
   end
+
+  
+end
