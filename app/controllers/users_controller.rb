@@ -40,6 +40,7 @@ class UsersController < ApplicationController
   end
   
   def favoritings
+    
     @user = User.find(params[:id])
     @favoritings = @user.favoritings.page(params[:page])
     counts(@user)
